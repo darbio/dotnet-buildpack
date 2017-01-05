@@ -135,7 +135,7 @@ PROJECT_NAME=$(ruby -rjson -e "j = JSON.parse(File.open('${PROJECT_DIR}/project.
 echo "${PROJECT_NAME:=$PROJECT_DIR_NAME}"
 
 echo "Restoring the packages"
-dotnet --verbose restore ${SRC_DIR}
+dotnet -d restore ${SRC_DIR} -v
 
 # configure some npm command during building
 export PATH="${PROJECT_DIR}/node_modules/.bin:${PATH}"
