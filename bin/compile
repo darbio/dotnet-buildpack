@@ -135,6 +135,7 @@ PROJECT_NAME=$(ruby -rjson -e "j = JSON.parse(File.open('${PROJECT_DIR}/project.
 echo "${PROJECT_NAME:=$PROJECT_DIR_NAME}"
 
 echo "Restoring the packages (${SRC_DIR})"
+echo "dotnet restore ${SRC_DIR}"
 dotnet restore ${SRC_DIR}
 echo "SUCCESS!"
 
